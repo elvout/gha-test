@@ -1,9 +1,8 @@
-def count_ones(arr: list[int]) -> int:
-    ''' Returns the number of ones in a list.
+from typing import List
 
-    This function uses the `builtins.list` type hint introduced in
-    Python 3.9. It should fail to run on earlier releases of Python.
-    '''
+
+def count_ones(arr: List[int]) -> int:
+    ''' Returns the number of ones in a list. '''
 
     count = 0
     for x in arr:

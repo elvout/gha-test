@@ -8,6 +8,7 @@ authors = ["elvout <eyang@cs.utexas.edu>"]
 python = "^3.6"
 
 [tool.poetry.dev-dependencies]
+mypy = "^0.910"
 pytest = "^5.2"
 
 [build-system]

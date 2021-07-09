@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+set -e
+
+if ! command -v poetry &> /dev/null; then
+    echo "error: poetry not found"
+    echo "Use 'git commit --no-verify' to skip the pre-commit hook."
+    exit 1
+fi
+
+poetry run mypy gha_test tests
+poetry run pytest

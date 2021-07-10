@@ -2,6 +2,8 @@
 
 set -e
 
+echo "Running pre-commit hook..."
+
 if ! command -v poetry &> /dev/null; then
     echo "error: poetry not found"
     echo "Use 'git commit --no-verify' to skip the pre-commit hook."

@@ -36,17 +36,17 @@ jobs:
           poetry env use ${{ env.pythonLocation }}/python
           poetry env info
 
-      # - name: Load cached venv
-      #   id: cached-poetry-dependencies
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ~/.venv-${{ matrix.python-version }}
-      #     key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}-2
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.venv-${{ matrix.python-version }}
+          key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}-2
 
-      # - name: Install dependencies
-      #   if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      #   run: poetry install --no-root --no-interaction
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-root --no-interaction
 
-      # - name: Test with pytest
-      #   run: |
-      #     poetry run pytest
+      - name: Test with pytest
+        run: |
+          poetry run pytest

@@ -32,8 +32,8 @@ jobs:
       - name: Configure Poetry
         run: |
           ${{ env.pythonLocation }}/python --version
-          poetry env use ${{ env.pythonLocation }}/python
           poetry config virtualenvs.path ~/.venv-${{ matrix.python-version }}
+          poetry env use ${{ env.pythonLocation }}/python
           poetry env info
 
       # - name: Load cached venv

@@ -31,6 +31,7 @@ jobs:
 
       - name: Configure Poetry
         run: |
+          poetry env use ${{ env.pythonLocation }}
           poetry config virtualenvs.path ~/.venv-${{ matrix.python-version }}
           poetry env info
 
